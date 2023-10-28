@@ -16,7 +16,7 @@ class UserService {
       message: message,
     }
 
-    const newEmail = "emmyoptions@gmail.com"
+    const newEmail = "adebayotobi366@gmail.com"
 
     try {
       await sendMailNotification(
