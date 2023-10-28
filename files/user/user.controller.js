@@ -8,7 +8,7 @@ const userMessageController = async (req, res, next) => {
   const [error, data] = await manageAsyncOps(
     UserService.createMessage(req.body)
   )
-
+  console.log("error", error)
   if (error) return next(error)
 
   if (!data.success) return next(new CustomError(data.msg, BAD_REQUEST, data))
@@ -16,9 +16,7 @@ const userMessageController = async (req, res, next) => {
   return responseHandler(res, SUCCESS, data)
 }
 const getMessageController = async (req, res, next) => {
-  const [error, data] = await manageAsyncOps(
-    UserService.getMessageService()
-  )
+  const [error, data] = await manageAsyncOps(UserService.getMessageService())
 
   if (error) return next(error)
 
