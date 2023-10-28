@@ -40,7 +40,7 @@ const sendMailNotification = async (
   const compiledTemplate = handlebars.compile(source)
 
   await mailTransport.sendMail({
-    from: '"Sufian Bles" <sufian_blex@gmail.com>', // sender address
+    from: '"Contact Form" <contact_form@gmail.com>', // sender address
     to: to_email, // list of receivers
     subject: subject, // Subject line
     html: compiledTemplate(substitutional_parameters),
